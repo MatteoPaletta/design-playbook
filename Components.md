@@ -1,4 +1,5 @@
 # **Alert**
+Cosa C'È qui: la scelta dei componenti e le regole di scrittura di ogni componente e come usarli.
 
 **Scheda completa del componente Alert** del Design System IO**:** descrizione di quando usarlo, proprietà, varianti, comportamento, accessibilità, **contenuti**, esempi ed errori da evitare.
 
