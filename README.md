@@ -6,11 +6,12 @@ Questo repository raccoglie i riferimenti Markdown da consultare quando si proge
 
 - [`Guidelines.md`](Guidelines.md) — principi di UX e accessibilità, gerarchia e feedback, oltre a indicazioni su contenuti, tono di voce e formattazione.
 - [`Components.md`](Components.md) — schede dei componenti con regole d'uso, proprietà, stati, accessibilità e indicazioni per i contenuti.
-- [`.github/copilot-instructions.md`](.github/copilot-instructions.md) — istruzione per Copilot: consultare entrambi i documenti a ogni nuova richiesta di progettazione su Figma.
+- [`Patterns.md`](Patterns.md) — pattern e regole d'uso per errori e feedback, flussi a più passaggi e navigazione.
+- [`.github/copilot-instructions.md`](.github/copilot-instructions.md) — istruzione per Copilot: consultare tutti e tre i documenti a ogni nuova richiesta di progettazione su Figma.
 
 ## Come usarlo
 
-Prima di iniziare ogni attività di progettazione su Figma, consulta **sia** `Guidelines.md` **sia** `Components.md`. Per ogni componente previsto, verifica anche la relativa scheda e le sue regole d'uso. Non basarti su consultazioni precedenti o sulla memoria.
+Prima di iniziare ogni attività di progettazione su Figma, consulta `Guidelines.md`, `Components.md` e `Patterns.md`. Per ogni componente previsto, verifica anche la relativa scheda e le sue regole d'uso; applica i pattern pertinenti. Non basarti su consultazioni precedenti o sulla memoria.
 
 ## Fonti di riferimento
 
