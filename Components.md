@@ -1,5 +1,4 @@
 # **Alert**
-Cosa C'È qui: la scelta dei componenti e le regole di scrittura di ogni componente e come usarli.
 
 **Scheda completa del componente Alert** del Design System IO**:** descrizione di quando usarlo, proprietà, varianti, comportamento, accessibilità, **contenuti**, esempi ed errori da evitare.
 
@@ -57,15 +56,7 @@ Se presente una CTA (action: true), l'interazione mostra uno spinner al posto de
 
 # **5\. Accessibilità (A11y)** 
 
-**5.1 Layout, Ridimensionamento e Contrasto**
-
-• Altezza Dinamica: Il contenitore dell'Alert NON DEVE avere un'altezza fissa. Deve espandersi verticalmente per adattarsi alle dimensioni del testo impostate dall'utente a livello di sistema (Dynamic Type su iOS e Font Scale su Android).
-
-• Divieto di Troncamento: NON troncare mai il titolo, il testo del messaggio o actionLabel. Il testo DEVE andare a capo naturalmente (text wrapping), permettendo al contenitore di crescere di conseguenza.
-
-• Contrasto e Token Semantici: Utilizzare esclusivamente i token semantici del Design System per sfondi, testi e icone, garantendo un rapporto di contrasto minimo di 4.5:1 per i testi e 3.0:1 per le icone di stato. Non affidarsi mai al solo colore per comunicare la variante (success, error, warning, info).
-
-**5.2 Semantica, Screen Reader e Ordine di Lettura**
+**5.1 Semantica, Screen Reader e Ordine di Lettura**
 
 • Icona Decorativa: L'icona di stato a sinistra DEVE essere nascosta alle tecnologie assistive (accessibilityElementsHidden={true} su iOS / importantForAccessibility="no" su Android). Non deve mai ricevere il focus durante la navigazione.
 
@@ -79,7 +70,7 @@ Se presente una CTA (action: true), l'interazione mostra uno spinner al posto de
    ◦ Assegnare il ruolo Button per azioni contestuali o di chiusura (es. "Riprova", "Ok, ho capito\!") e il ruolo Link per navigazioni verso altre schermate o risorse esterne (es. "Scopri di più").  
    ◦ Garantire un'area di tocco minima di 44x44pt (iOS) / 48x48dp (Android). Quando l'azione è posizionata inline alla fine del testo (es. in layout: "edgeToEdge"), assicurarsi che resti chiaramente selezionabile senza interrompere la leggibilità del paragrafo.  
    • Stato di Caricamento (Loading): Quando l'azione è in corso (aria-busy="true" / accessibilityState={{ busy: true, disabled: true }}), lo screen reader deve annunciare lo stato di attesa e inibire attivazioni multiple.  
-   **5.3 Annunci Dinamici e Contenuti**  
+   **5.2 Annunci Dinamici e Contenuti**  
    • Etichette Esplicite: Il valore di actionLabel deve essere chiaro e autoesplicativo anche se letto fuori contesto dagli screen reader (o arricchito programmaticamente tramite accessibilityLabel in caso di etichette brevi come "Scopri di più").
 
 # **6\. Content**
@@ -142,15 +133,7 @@ Il componente mantiene un distacco verticale costante di 24px dagli elementi cir
 
 # **5\. Accessibilità (A11y)** 
 
-**5.1 Layout, Ridimensionamento e Contrasto**
-
-• Altezza Dinamica e Wrapping: Il contenitore del Banner NON DEVE avere un'altezza fissa. Deve espandersi verticalmente in base alle preferenze di dimensione del testo di sistema (Dynamic Type su iOS e Font Scale su Android). Vietato troncare Titolo, Description o CTA (niente ellissi o limiti di righe).
-
-• Illustrazioni Decorative: Le illustrazioni grafiche a destra (es. cuore/mano nei Banner informativi o grafica IT-Wallet) DEVONO essere nascoste alle tecnologie assistive e non devono sottrarre spazio vitale al flusso del testo quando i font sono ingranditi.
-
-• Contrasto e Token Semantici: Utilizzare esclusivamente i token semantici per le varianti di colore (Color: Neutral, Turquoise e varianti IT-Wallet), garantendo un rapporto di contrasto minimo di 4.5:1 per tutti i testi e 3.0:1 per icone funzionali (icona di chiusura X e badge di stato IT-Wallet).
-
-**5.2 Semantica, Screen Reader e Ordine di Lettura**
+**5.1 Semantica, Screen Reader e Ordine di Lettura**
 
 • Ordine di Focus (Reading Order): Il blocco testuale viene letto prima del pulsante di chiusura. Gli screen reader DEVONO seguire rigorosamente questa sequenza:
 
@@ -158,7 +141,7 @@ Il componente mantiene un distacco verticale costante di 24px dagli elementi cir
 2. Pulsante di Chiusura (solo se Close \= True) — Posizionato per ultimo nell'ordine di lettura. Deve avere ruolo Button, accessibilityLabel esplicita (es. "Chiudi banner" o "Chiudi avviso") e un'area di tocco minima di 44x44pt (iOS) / 48x48dp (Android), anche se l'icona X visiva è più piccola.  
    • Stato di Caricamento (Skeleton \= Yes): Quando il componente è nello stato Skeleton \= Yes, DEVE essere nascosto allo screen reader (oppure annunciato come "Caricamento contenuto in corso" tramite accessibilityState={{ busy: true }}) per evitare la lettura di elementi vuoti.  
    • Esposizione Stato IT-Wallet: Nelle varianti IT-Wallet \| Status, le icone di stato accanto al titolo (spunta verde, triangolo giallo, punto esclamativo rosso) non devono essere lette come caratteri isolati, ma tradotte semanticamente nel messaggio (es. "Documento verificato", "Azione richiesta", "Documento non valido").  
-   **5.3 Contenuti e Localizzazione**  
+   **5.2 Contenuti e Localizzazione**  
    • CTA Auto-esplicative: Evitare etichette generiche isolate come "Scopri di più" o "Inizia" prive di contesto per lo screen reader: associare sempre un'accessibilityLabel descrittiva (es. "Scopri di più sulla donazione" o "Inizia la conferma dell'identità"). 
 
 # **6\. Content**
@@ -231,13 +214,7 @@ Regole per la gestione del testo:
 
 # **5\. Accessibilità (A11y)**
 
-**5.1 Layout, Ridimensionamento e Contrasto**
-
-* Altezza Dinamica e Wrapping: Sia l'intestazione (header) sia il pannello espandibile dell'Accordion NON DEVONO avere un'altezza fissa. Devono adattarsi verticalmente alle dimensioni del testo impostate dall'utente (Dynamic Type su iOS e Font Scale su Android). Vietato troncare il titolo o il testo interno (niente ellissi o limiti di righe).  
-* Area di Tocco: L'intera riga dell'intestazione (header) deve fungere da area interattiva per aprire/chiudere il componente, garantendo un'altezza minima di tocco di 44pt (iOS) / 48dp (Android). Lo stesso requisito si applica ai pulsanti informativi "i" nella variante Tipologia: Credential.  
-* Contrasto e Token Semantici: Utilizzare esclusivamente i token semantici del Design System, garantendo un contrasto minimo di 4.5:1 per tutti i testi (titolo, corpo, etichette e valori credenziali) e 3.0:1 per le icone funzionali (chevron di espansione, icona opzionale a sinistra e icona info "i").
-
-**5.2 Semantica, Screen Reader e Ordine di Lettura**
+**5.1 Semantica, Screen Reader e Ordine di Lettura**
 
 * Intestazione (Header) e Stato di Espansione (Status): L'intera testata cliccabile deve essere esposta come un unico nodo interattivo con ruolo Button e stato di espansione dinamico (accessibilityState={{ expanded: true/false }}), in modo che lo screen reader annunci sia il titolo sia lo stato corrente ("Espanso" per Status: Open / "Compresso" per Status: Closed).  
 * Icone Decorative e Chevron: L'icona opzionale a sinistra (Has Icon: Yes) e la freccia di stato a destra (chevron) DEVONO essere nascoste alle tecnologie assistive (accessibilityElementsHidden={true} / importantForAccessibility="no"), poiché il loro significato è già veicolato dal titolo e dallo stato expanded.
@@ -249,7 +226,7 @@ Regole per la gestione del testo:
    b. Contenuto interno: nella variante Default, il testo del messaggio (ruolo Text) seguito dall'eventuale link (Link: Yes, ruolo Link); nella variante Credential, le coppie etichetta-valore (es. "Nome: Anna") e gli eventuali pulsanti informativi "i" con accessibilityLabel esplicita (es. "Dettagli su Tipologia").  
    • Stato di Caricamento (Skeleton: Yes): Quando Skeleton: il componente non deve essere interattivo (disabled) e deve essere nascosto allo screen reader (oppure annunciato come "Caricamento in corso" tramite accessibilityState={{ busy: true }}).
 
-**5.3 Contenuti e Localizzazione**  
+**5.2 Contenuti e Localizzazione**  
 • Titoli Chiari e Sintetici: Il Title dell'Accordion deve anticipare con precisione il contenuto nascosto, permettendo all'utente di decidere se espanderlo senza doverlo aprire.  
 • Etichette Link Esplicite (Link: Yes): Evitare link generici come "Scopri di più" privi di contesto: associare sempre un'accessibilityLabel descrittiva legata al titolo dell'Accordion (es. "Scopri di più sulla gestione delle comunicazioni"). 
 
@@ -313,13 +290,7 @@ Quando più elementi Feature Info vengono posizionati di seguito all'interno del
 
 # **5\. Accessibilità (A11y)**
 
-5.1 Layout, Ridimensionamento e Contrasto
-
-* Altezza Dinamica e Wrapping: Il contenitore del Feature info NON DEVE avere un'altezza fissa. Deve espandersi verticalmente in base alle preferenze di dimensione del testo di sistema (Dynamic Type su iOS e Font Scale su Android). Vietato troncare il testo descriptivo o l'etichetta della CTA (niente ellissi o limiti forzati di righe).  
-* Area di Tocco della CTA (CTA? \= True): Quando è presente il link/pulsante d'azione sottostante (es. "Scopri di più"), garantire un'area di tocco minima di 44x44pt (iOS) / 48x48dp (Android), estendendola tramite padding trasparente (hitSlop) se l'ingombro visivo del testo è inferiore.  
-* Contrasto e Token Semantici: Utilizzare esclusivamente i token semantici del Design System, garantendo un rapporto di contrasto minimo di 4.5:1 per il testo principale, per la CTA e per gli indicatori numerici (Numberlist: True).
-
-5.2 Semantica, Screen Reader e Ordine di Lettura
+5.1 Semantica, Screen Reader e Ordine di Lettura
 
 * Gestione Elemento Laterale Sinistro: Il comportamento dello screen reader cambia in base alla variante attiva:  
   * Varianti Icon (Icon: True) e Pictogram (Pictogram: True): L'icona o il pittogramma a sinistra ha funzione puramente decorativa/di supporto visivo e DEVE essere nascosto alle tecnologie assistive (accessibilityElementsHidden={true} su iOS / importantForAccessibility="no" su Android). Non deve ricevere il focus.  
@@ -329,7 +300,7 @@ Quando più elementi Feature Info vengono posizionati di seguito all'interno del
 * Corpo del testo informativo — Ruolo: testo (Text).  
 * Call to Action (solo se CTA? \= True) — Ruolo interattivo distinto (Button o Link).
 
-5.3 Contenuti e Localizzazione
+5.2 Contenuti e Localizzazione
 
 * Nessuna Dipendenza da Feedback Semantici: Poiché il Feature info fornisce approfondimenti neutri senza connotazione di stato (a differenza dell'Alert), non aggiungere prefissi di gravità ("Avviso:", "Errore:").  
 * Etichette CTA Auto-esplicative (CTA? \= True): Evitare che lo screen reader legga formule generiche isolate come "Scopri di più". Associare sempre un'accessibilityLabel contestuale legata al servizio o all'argomento descritto nel testo (es. "Scopri di più su \[Nome servizio\]", come indicato nelle specifiche di lettura). 
@@ -2254,13 +2225,7 @@ Regole per la gestione del testo e del layout del componente nel DOM (Document O
 
 # **5\. Accessibilità (A11y)**
 
-**5.1 Layout, Ridimensionamento e Contrasto**
-
-* Altezza Dinamica e Wrapping: Il riquadro di Missing items NON DEVE avere un'altezza fissa. Deve espandersi verticalmente per adattarsi alle dimensioni del testo impostate dall'utente (Dynamic Type su iOS e Font Scale su Android fino al 200%). Vietato troncare il messaggio di errore o l'etichetta della CTA (niente ellissi o limiti forzati di righe).  
-* Area di Tocco della CTA: La CTA testuale (es. "Prova di nuovo") DEVE garantire un'area cliccabile minima di 44x44pt su iOS e 48x48dp su Android, estendendo l'area sensibile tramite padding trasparente (hitSlop) oltre l'ingombro visivo del testo.  
-* Contrasto e Token Semantici: Utilizzare esclusivamente i token semantici del Design System, garantendo un rapporto di contrasto minimo di 4.5:1 per il testo del messaggio e per la CTA, e almeno 3.0:1 per l'icona di stato e il contenitore rispetto allo sfondo della pagina.
-
-**5.2 Semantica, Screen Reader e Ordine di Lettura**
+**5.1 Semantica, Screen Reader e Ordine di Lettura**
 
 * Icona Decorativa: L'icona triangolare di avviso posizionata sopra il testo DEVE essere nascosta alle tecnologie assistive (accessibilityElementsHidden={true} su iOS / importantForAccessibility="no" su Android), poiché il messaggio testuale esprime già chiaramente la natura dell'errore. Non deve ricevere il focus.  
 * Ordine di Focus (Reading Order): Gli screen reader DEVONO attraversare gli elementi interni in ordine strettamente sequenziale dall'alto verso il basso:  
@@ -2269,7 +2234,7 @@ Regole per la gestione del testo e del layout del componente nel DOM (Document O
    1. Stato di Ricaricamento (Loading): Quando l'utente attiva la CTA "Prova di nuovo" e parte il tentativo di ricaricamento, esporre lo stato di attesa tramite accessibilityState={{ busy: true, disabled: true }} (o annunciare "Caricamento in corso" tramite AccessibilityInfo.announceForAccessibility) inibendo tocchi multipli.  
    2. Esito del Ricaricamento (Annuncio Dinamico): Se il nuovo tentativo fallisce nuovamente o carica i dati con successo, comunicare l'esito allo screen reader tramite AccessibilityInfo.announceForAccessibility senza far perdere l'orientamento all'utente.
 
-**5.3 Contenuti e Disambiguazione di Contesto**
+**5.2 Contenuti e Disambiguazione di Contesto**
 
 * Etichette CTA Contestuali (Label in Name \- WCAG 2.5.3): Quando il componente Missing items viene utilizzato più volte nella stessa schermata (es. per sezioni diverse come "Metodi di pagamento" e "Ricevute pagoPA"), l'etichetta visiva può restare sintetica ("Prova di nuovo"), ma la accessibilityLabel del pulsante DEVE essere arricchita programmaticamente con il contesto della sezione (es. "Prova di nuovo a caricare i metodi di pagamento"), mantenendo il testo visibile all'interno del nome accessibile.  
 * Messaggi Chiari e Specifici: Il testo del messaggio deve indicare con precisione quale contenuto o sezione non è stato caricato, evitando messaggi generici come "Errore" o "Qualcosa è andato storto" 
@@ -2348,8 +2313,6 @@ La variante Search Input New Page viene utilizzata per gestire la ricerca all'in
 * Touch Target e Spaziatura Minima tra Controlli:  
   * L'area del campo di input, il pulsante di cancellazione ("X"), il pulsante "Annulla" (variante Searchbar in page) e il pulsante Indietro (variante Searchbar in new page) DEVONO garantire ciascuno un'area di tocco minima di 44x44pt (iOS) / 48x48dp (Android).  
   * Garantire una distanza minima di sicurezza di almeno 8pt/dp tra i target adiacenti (in particolare tra il pulsante "X" interno al campo e l'azione esterna "Annulla", e tra la freccia Indietro e il bordo sinistro del campo) per evitare attivazioni accidentali.
-
-* Altezza Dinamica e Wrapping: Il campo di ricerca NON DEVE avere un'altezza fissa rigida: deve adattarsi all'ingrandimento dei font di sistema (Dynamic Type su iOS e Font Scale su Android fino al 200%) senza tagliare il testo inserito o le etichette "Annulla".
 
 **5.2 Semantica, Screen Reader e Ordine di Lettura**
 
@@ -2442,7 +2405,6 @@ L'interfaccia del componente è controllata dalle seguenti proprietà esposte ne
 **5.1 Touch Target, Ridimensionamento e Contrasto**
 
 * Area di Tocco e Spaziatura Minima: Ogni singola tab (Tab single element) DEVE garantire un'area cliccabile minima di 44pt di altezza su iOS / 48dp su Android, mantenendo una spaziatura minima di almeno 8pt/dp tra una pillola e l'altra all'interno del Tab group per evitare selezioni accidentali.  
-* Ridimensionamento Testo e Scorrimento Orizzontale: Il testo della tab (Text) NON DEVE mai essere troncato con ellissi. Quando il testo si espande (Dynamic Type su iOS e Font Scale su Android fino al 200%) o quando sono presenti più elementi (N.Elements: 3+), il contenitore Tab group DEVE abilitare lo scorrimento orizzontale fluido (scrollView) lasciando parzialmente visibile la tab successiva come invito allo scorrimento (affordance), senza comprimere le etichette.  
 * Contrasto e Distinzione dello Stato (Contrast: No / Yes):  
   * Garantire un rapporto di contrasto minimo di 4.5:1 per il testo della label in entrambi gli stati (Selected: Yes e Selected: No) e su entrambe le varianti di sfondo (Contrast: No e Contrast: Yes).  
   * La tab selezionata (Selected: Yes) NON DEVE affidarsi solo al cambio di colore, ma distinguersi tramite riempimento/bordo della pillola e, se attiva l'icona (Show Icon: True), tramite cambio di stile dell'icona (es. outline \-\> filled).  
